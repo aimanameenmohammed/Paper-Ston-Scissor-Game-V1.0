@@ -1,4 +1,4 @@
-```
+
 # 🪨📄✂️ Paper-Ston-Scissor Game V1.0
 
 A simple **Console-Based Paper, Stone, Scissor Game** developed in **C++**.
@@ -462,4 +462,3 @@ Thank you for visiting the project! ❤️
 **Language:** C++  
 **Type:** Console Application  
 **Status:** Completed
-```
