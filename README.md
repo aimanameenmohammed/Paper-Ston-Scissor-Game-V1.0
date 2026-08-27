@@ -1,11 +1,10 @@
-
-# 🪨📄✂️ Paper-Ston-Scissor Game V1.0
+# 🎮 Paper-Stone-Scissor Game V1.0
 
 A simple **Console-Based Paper, Stone, Scissor Game** developed in **C++**.
 
-This project is a practical C++ programming project focused on applying fundamental programming concepts such as **Enums, Structures, Functions, Loops, Conditions, Random Number Generation, Input Validation, and Game Logic**.
+This project is a practical C++ programming project focused on applying fundamental programming concepts through a complete interactive console game.
 
-The player competes against the computer across a selected number of rounds, with the program calculating the winner of each round and displaying the final game statistics.
+The player competes against the computer for a selected number of rounds. In each round, the player chooses **Paper, Stone, or Scissor**, while the computer generates its choice randomly. The program determines the winner of each round, keeps track of the scores, and displays the final game result.
 
 ---
 
@@ -13,13 +12,15 @@ The player competes against the computer across a selected number of rounds, wit
 
 - [Overview](#-overview)
 - [Features](#-features)
+- [Game Rules](#-game-rules)
 - [How the Game Works](#-how-the-game-works)
 - [Game Flow](#-game-flow)
 - [Round Selection](#-round-selection)
-- [Player Choices](#-player-choices)
+- [Player Choice](#-player-choice)
 - [Computer Choice](#-computer-choice)
 - [Round Winner](#-round-winner)
-- [Game Result](#-game-result)
+- [Score Tracking](#-score-tracking)
+- [Final Game Result](#-final-game-result)
 - [Play Again](#-play-again)
 - [Programming Concepts](#-programming-concepts)
 - [Project Structure](#-project-structure)
@@ -27,7 +28,6 @@ The player competes against the computer across a selected number of rounds, wit
 - [How to Run](#-how-to-run)
 - [Example](#-example)
 - [Learning Objectives](#-learning-objectives)
-- [Screenshots](#-screenshots)
 - [Author](#-author)
 - [License](#-license)
 
@@ -35,84 +35,108 @@ The player competes against the computer across a selected number of rounds, wit
 
 ## 🎯 Overview
 
-**Paper-Ston-Scissor Game V1.0** is a command-line game where the player competes against the computer.
+The **Paper-Stone-Scissor Game V1.0** is a console application built with C++.
 
-Before the game starts, the player chooses how many rounds to play. For every round, the player selects:
+The project allows the player to play multiple rounds against the computer and receive a complete summary at the end of the game.
 
-- 📄 Paper
-- 🪨 Stone
-- ✂️ Scissor
+The application demonstrates how basic programming concepts can be combined to create a complete interactive program with:
 
-The computer automatically generates a random choice.
-
-The program then determines the winner of the round, updates the scores, and continues until all selected rounds are completed.
-
-At the end of the game, the program displays a complete summary containing:
-
-- Total number of rounds
-- Player wins
-- Computer wins
-- Draws
-- Final winner
-
-The player can also choose whether to start another game.
+- User input validation
+- Random computer choices
+- Game rules and decision making
+- Round-by-round results
+- Score calculation
+- Final winner determination
+- Replay functionality
+- Console screen management
 
 ---
 
 ## ✨ Features
 
-### 🎮 Game Features
-
-- Choose the number of rounds before starting the game.
-- Supports between **1 and 10 rounds**.
-- Player can choose Paper, Stone, or Scissor.
-- Computer generates its choice randomly.
-- Determines the winner of every round.
-- Tracks player wins.
-- Tracks computer wins.
-- Tracks draws.
-- Displays the result of every round.
-- Displays the final game result.
-- Determines the overall winner.
-- Allows the player to play again.
-- Validates player input.
-- Validates the selected number of rounds.
-- Changes console colors depending on the round winner.
-- Clears and resets the console between games.
+- 🎮 Play against the computer
+- 🔢 Choose the number of rounds from **1 to 10**
+- ✋ Choose between:
+  - Paper
+  - Stone
+  - Scissor
+- 🤖 Computer generates a random choice
+- 🏆 Determines the winner of every round
+- 📊 Tracks player wins, computer wins, and draws
+- 🎨 Changes console color according to the round winner
+- 📝 Displays detailed round results
+- 🏁 Displays the final game result
+- 🔄 Allows the player to start another game
+- ✅ Validates user input before continuing
+- 🧩 Uses enums and structures to organize game data
 
 ---
 
-## 🎮 How the Game Works
+## 🥊 Game Rules
+
+The game follows the classic Paper-Stone-Scissor rules:
+
+| Player Choice | Beats | Loses To |
+|---------------|-------|----------|
+| 🪨 Stone | ✂️ Scissor | 📄 Paper |
+| 📄 Paper | 🪨 Stone | ✂️ Scissor |
+| ✂️ Scissor | 📄 Paper | 🪨 Stone |
+
+### Draw
+
+If the player and computer choose the same option, the round ends in a **Draw**.
+
+---
+
+## ⚙️ How the Game Works
 
 The game follows a simple sequence:
 
-    🚀 Start Game
-          |
-          ▼
-    🔢 Choose Number of Rounds
-          |
-          ▼
-    🎮 Player Choice
-          |
-          ▼
-    🤖 Computer Choice
-          |
-          ▼
-    ⚖️ Determine Round Winner
-          |
-          ▼
-    📊 Update Scores
-          |
-          ▼
-    🔁 Continue Until All Rounds Finish
-          |
-          ▼
-    🏆 Display Final Result
-          |
-          ▼
-    🔄 Play Again?
+1. Start the game.
+2. Choose the number of rounds.
+3. Enter the player's choice for each round.
+4. Generate the computer's choice randomly.
+5. Compare both choices.
+6. Determine the winner of the round.
+7. Display the round result.
+8. Update the scores.
+9. Continue until all selected rounds are completed.
+10. Display the final game result.
+11. Ask whether the player wants to play again.
 
-This structure keeps the gameplay simple while demonstrating how different programming concepts can work together to build a complete console application.
+---
+
+## 🔄 Game Flow
+
+    🚀 Start Game
+           |
+           ▼
+    🔢 Choose Number of Rounds
+           |
+           ▼
+    🎮 Player Choice
+           |
+           ▼
+    🤖 Computer Choice
+           |
+           ▼
+    ⚖️ Determine Round Winner
+           |
+           ▼
+    📊 Update Score
+           |
+           ▼
+    🔁 More Rounds?
+        /       \
+      Yes        No
+       |          |
+       └──────────┘
+                  |
+                  ▼
+          🏆 Final Result
+                  |
+                  ▼
+            🔄 Play Again?
 
 ---
 
@@ -124,9 +148,9 @@ The accepted range is:
 
 **1 → 10 rounds**
 
-The program validates the entered number and continues asking until the player enters a valid value.
+If the entered number is outside this range, the program continues asking until a valid value is entered.
 
-Example:
+### Example
 
     Enter the Rounds From 1 To 10 : 5
 
@@ -134,17 +158,15 @@ This starts a game consisting of **5 rounds**.
 
 ---
 
-## 🎮 Player Choices
+## 🎮 Player Choice
 
-For every round, the player chooses one of the available options:
+For every round, the player is asked to choose one of the available options:
 
     [1] Paper
     [2] Stone
     [3] Scissor
 
-The program validates the player's input to make sure that the selected value represents a valid game choice.
-
-Invalid values are rejected and the program continues asking for a valid choice.
+The program validates the entered value to ensure that the selected number represents a valid game choice.
 
 ---
 
@@ -152,59 +174,67 @@ Invalid values are rejected and the program continues asking for a valid choice.
 
 The computer automatically generates its choice using a random number.
 
-The program generates a random value between:
+The program generates a random value from:
 
     1 → 3
 
-Each number represents one of the available choices:
+The generated value is then converted into the corresponding game choice:
 
     1 = Stone
     2 = Paper
     3 = Scissor
 
-This creates a different computer choice for every round.
+This gives the computer a random move in every round.
 
 ---
 
-## ⚖️ Round Winner
+## 🏆 Round Winner
 
-After both the player and computer have selected their choices, the program determines the winner.
+After both choices are available, the program compares them according to the game rules.
 
-The game follows the standard rules:
+The round can have one of three results:
 
-| Player | Computer | Result |
-|--------|----------|--------|
-| 🪨 Stone | ✂️ Scissor | Player Wins |
-| 📄 Paper | 🪨 Stone | Player Wins |
-| ✂️ Scissor | 📄 Paper | Player Wins |
-| 🪨 Stone | 📄 Paper | Computer Wins |
-| 📄 Paper | ✂️ Scissor | Computer Wins |
-| ✂️ Scissor | 🪨 Stone | Computer Wins |
-| Same Choice | Same Choice | Draw |
+- 👤 Player wins
+- 🤖 Computer wins
+- 🤝 Draw
 
-The winner is calculated programmatically for every round.
+The winner is then stored and displayed as part of the round result.
 
----
+### Example
 
-## 📊 Round Result
-
-After every round, the program displays information such as:
-
-    Round [ 1 ] begins
-
-    Player Choice   : Stone
-    Computer Choice : Scissor
-    Round Winner    : Player
-
-The program then updates the corresponding score.
+    Player Choice    : Stone
+    Computer Choice  : Scissor
+    Round Winner     : Player
 
 ---
 
-## 🏆 Game Result
+## 📊 Score Tracking
 
-When all selected rounds have been completed, the program calculates the overall winner based on the number of rounds won.
+During the game, the program keeps track of:
 
-The final result includes:
+- 👤 Player Wins
+- 🤖 Computer Wins
+- 🤝 Draws
+
+After every round, the corresponding counter is increased.
+
+At the end of the game, these values are used to determine the final winner.
+
+---
+
+## 🏁 Final Game Result
+
+After all selected rounds are completed, the program displays a complete summary containing:
+
+- Total number of rounds
+- Player win count
+- Computer win count
+- Draw count
+- Final winner
+
+### Example
+
+    Game Result
 
     Game Rounds       : 5
     Player Win Time   : 3
@@ -212,212 +242,228 @@ The final result includes:
     Draw Time         : 1
     Final Winner      : Player
 
-The overall result can be:
+The final winner is determined by comparing the number of rounds won by the player and the computer.
 
-- 🏆 Player
-- 🤖 Computer
-- 🤝 Draw
+If both have the same number of wins, the final result is a **Draw**.
 
 ---
 
 ## 🔄 Play Again
 
-After displaying the final result, the player is asked:
+After displaying the final result, the program asks the player whether they want to start another game.
 
     Do you want to play again Y/N ?
 
-If the player chooses to continue, the game starts again.
-
-This allows multiple games to be played without restarting the application.
+Entering `y` starts a new game.
 
 ---
 
 ## 🧠 Programming Concepts
 
-This project was built to practice and strengthen fundamental C++ programming concepts.
+This project was built to practice and reinforce several fundamental C++ programming concepts.
 
-### 🔹 Enumerations
+### Enumerations
 
-Enums are used to represent game choices and possible winners.
+The project uses enumerations to represent game choices and possible winners.
 
-Examples include:
+    enum enGameChoice
+    {
+        stone = 1,
+        paper = 2,
+        scissor = 3
+    };
 
-- Game choices
-- Player
-- Computer
-- Draw
+    enum enWinner
+    {
+        player = 1,
+        computer = 2,
+        draw = 3
+    };
 
-This makes the game logic easier to understand and maintain.
+This makes the code easier to understand than working with unexplained numeric values.
 
-### 🔹 Structures
+### Structures
 
-Structures are used to group related game information.
+Structures are used to group related information together.
 
-The project uses structures to store:
+The project uses:
 
-- Round information
-- Player choice
-- Computer choice
-- Round winner
-- Game statistics
-- Final game result
+- `stRoundInfo`
+- `stGameRounds`
 
-### 🔹 Functions
+These structures store information about individual rounds and the overall game result.
 
-The program is divided into multiple functions, where each function is responsible for a specific task.
+### Functions
 
-Examples include functions responsible for:
+The program is divided into multiple functions, each responsible for a specific task, including:
 
 - Reading the number of rounds
 - Reading the player's choice
-- Generating random numbers
-- Getting the computer choice
+- Generating the computer's choice
 - Determining the round winner
-- Determining the overall winner
+- Determining the final winner
 - Displaying round results
 - Displaying the final result
-- Starting the game
+- Starting and restarting the game
 
-### 🔹 Input Validation
+This helps keep the program organized and easier to maintain.
 
-The program validates user input to prevent invalid game choices and invalid round counts.
+### Random Number Generation
 
-### 🔹 Random Number Generation
+The computer's choice is generated randomly using C++ random number generation.
 
-The computer's choice is generated randomly using C++ random number functionality.
+The program initializes the random seed and generates values within the required range.
 
-### 🔹 Loops
+### Input Validation
 
-Loops are used to:
+The program validates:
 
-- Validate user input
-- Repeat rounds
-- Allow the player to play again
+- Number of rounds
+- Player game choice
 
-### 🔹 Conditional Logic
+Invalid values cause the program to ask the player for another valid input.
+
+### Conditional Logic
 
 `if`, `else if`, `else`, and `switch` statements are used to implement the game rules and determine winners.
 
-### 🔹 Console Formatting
+### Loops
 
-The program also uses console commands to:
+Loops are used for:
+
+- Validating user input
+- Processing multiple rounds
+- Allowing the player to replay the game
+
+### Console Management
+
+The project also uses console commands to:
 
 - Clear the screen
-- Change console colors
-- Highlight round results
+- Change the console color depending on the round result
 
 ---
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
-The project is intentionally simple and organized as a console application:
+The repository contains the following main files:
 
-    Paper-Ston-Scissor-Game-V1.0
+    Paper-Ston-Scissor-Game-V1.0/
     │
     ├── 📄 Paper-Ston-Scissor Game.cpp
     ├── 📄 Paper-Ston-Scissor Game.sln
     ├── 📄 Paper-Ston-Scissor Game.vcxproj
     ├── 📄 Paper-Ston-Scissor Game.vcxproj.filters
-    ├── 📄 .gitignore
-    ├── 📄 .gitattributes
     ├── 📄 LICENSE.txt
-    └── 📄 README.md
+    ├── 📄 README.md
+    ├── 📄 .gitignore
+    └── 📄 .gitattributes
 
-The main game implementation is contained in:
+### Main Source File
 
-    Paper-Ston-Scissor Game.cpp
+`Paper-Ston-Scissor Game.cpp`
+
+Contains the complete implementation of the game, including:
+
+- Game data structures
+- Game rules
+- Input handling
+- Random computer choice
+- Winner calculation
+- Score tracking
+- Result display
+- Replay functionality
+
+### Visual Studio Files
+
+The repository also contains the Visual Studio Solution and C++ project files required to open and build the project in Visual Studio.
 
 ---
 
 ## 🛠️ Technologies Used
 
 - **C++**
+- **Standard C++ Library**
 - **Visual Studio**
 - **Console Application**
-- Standard C++ Library
 
-Main concepts and libraries used include:
+### Main C++ Libraries
 
-- `iostream`
-- `cstdlib`
-- Enums
-- Structures
-- Functions
-- Loops
-- Conditional Statements
-- Random Number Generation
+    #include <iostream>
+    #include <cstdlib>
+
+The project uses standard C++ functionality for console input/output and random number generation.
 
 ---
 
 ## ▶️ How to Run
 
-### 1. Clone the Repository
+### Requirements
 
-    git clone https://github.com/aimanameenmohammed/Paper-Ston-Scissor-Game-V1.0.git
+- Windows
+- Visual Studio with C++ development tools
+- A C++ compiler
 
-### 2. Open the Solution
+### Steps
 
-Open:
+1. Clone the repository:
 
-    Paper-Ston-Scissor Game.sln
+       git clone https://github.com/aimanameenmohammed/Paper-Ston-Scissor-Game-V1.0.git
 
-using **Visual Studio**.
+2. Open the solution file:
 
-### 3. Build the Project
+       Paper-Ston-Scissor Game.sln
 
-Build the solution using Visual Studio.
+3. Build the project.
 
-### 4. Run the Application
+4. Run the application.
 
-Run the project and follow the instructions displayed in the console.
+5. Choose the number of rounds.
+
+6. Enter your choice for each round.
+
+7. Enjoy the game and view the final result.
 
 ---
 
-## 🧪 Example
+## 💻 Example
 
-Example of a game round:
+A typical round looks like:
 
-    Player Choice   : Stone
-    Computer Choice : Scissor
+    _________Round [ 1 ] begins _____
 
-    Round Winner : Player
+     Player Choice   : Stone
+     Computer Choice : Scissor
+     Round Winner    : Player
+
+    --------------------------
 
 The game continues until the selected number of rounds has been completed.
 
-At the end, the program displays the complete statistics and the final winner.
+After the final round, the application displays the overall game result.
 
 ---
 
 ## 🎓 Learning Objectives
 
-This project was created as part of my programming learning journey.
+The main purpose of this project was to practice fundamental C++ programming through a complete practical application.
 
-The main objectives were to practice:
+Through this project, I practiced:
 
-- Understanding C++ syntax and fundamentals
-- Using enumerations
+- Writing structured C++ programs
+- Working with enumerations
 - Working with structures
-- Designing reusable functions
-- Applying conditional logic
-- Working with loops
+- Creating reusable functions
+- Using loops and conditional statements
 - Validating user input
 - Generating random values
-- Building game logic
-- Managing application state
-- Organizing a console application
-- Converting programming concepts into a practical project
+- Managing program state
+- Applying game logic
+- Tracking scores
+- Organizing a Visual Studio C++ project
+- Building an interactive console application
 
-Although the project is simple in terms of its interface, it provides practical experience in designing and implementing a complete program from start to finish.
-
----
-
-## 📸 Screenshots
-
-Screenshots can be added to the repository under:
-
-    docs/Images/
-
-Once screenshots are added, they can be displayed here to provide a visual overview of the game.
+This project represents one of the practical steps in my programming journey and helped strengthen my understanding of how individual programming concepts can work together inside a complete application.
 
 ---
 
@@ -425,14 +471,12 @@ Once screenshots are added, they can be displayed here to provide a visual overv
 
 ### Ayman Ameen Mohammed
 
-**Software Developer | C# | C++ | .NET | Database Development**
+Software Developer | C# | C++ | .NET | Database Development
 
 This project is part of my ongoing programming journey focused on learning through practical projects and continuously improving software development skills.
 
-### 🔗 Connect With Me
-
-- 💼 LinkedIn: https://www.linkedin.com/in/aiman-ameen-2548673a/
-- 🐙 GitHub: https://github.com/aimanameenmohammed
+- 💻 **GitHub:** https://github.com/aimanameenmohammed
+- 🔗 **LinkedIn:** https://www.linkedin.com/in/aiman-ameen-2548673a/
 
 ---
 
@@ -440,25 +484,23 @@ This project is part of my ongoing programming journey focused on learning throu
 
 This project is licensed under the **MIT License**.
 
-The complete license text is available here:
+You can view the complete license here:
 
-👉 [LICENSE.txt](LICENSE.txt)
-
-You are free to use, modify, and distribute this project according to the terms of the MIT License.
+**[MIT License](LICENSE.txt)**
 
 ---
 
 ## ⭐ Support
 
-If you found this project useful or interesting, consider giving the repository a ⭐ on GitHub.
+If you find this project useful or interesting, feel free to:
 
-Thank you for visiting the project! ❤️
+- ⭐ Star the repository
+- 👀 Explore the source code
+- 💡 Learn from the implementation
+- 🚀 Check out my other programming projects
 
 ---
 
-## 🚀 Project Status
-
-**Version:** V1.0  
-**Language:** C++  
-**Type:** Console Application  
-**Status:** Completed
+<p align="center">
+  Built with ❤️ using C++
+</p>
