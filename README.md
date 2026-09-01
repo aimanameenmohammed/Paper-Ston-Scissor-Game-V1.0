@@ -37,7 +37,7 @@ The player competes against the computer for a selected number of rounds. In eve
 <td>🛠️ <a href="#-technologies-used">Technologies Used</a></td>
 </tr>
 <tr>
-<td>▶️ <a href="#how-to-run">How to Run</a></td>
+<td>▶️ <a href="#-how-to-run">How to Run</a></td>
 <td>💻 <a href="#-example">Example</a></td>
 <td>🎓 <a href="#-learning-objectives">Learning Objectives</a></td>
 </tr>
@@ -50,6 +50,7 @@ The player competes against the computer for a selected number of rounds. In eve
 <td colspan="3" align="center">📅 <a href="#-development-timeline">Development Timeline</a></td>
 </tr>
 </table>
+
 ---
 
 ## 🎯 Overview
