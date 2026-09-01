@@ -46,8 +46,10 @@ The player competes against the computer for a selected number of rounds. In eve
 <td>📜 <a href="#-license">License</a></td>
 <td>⭐ <a href="#-support">Support</a></td>
 </tr>
+<tr>
+<td colspan="3" align="center">📅 <a href="#-development-timeline">Development Timeline</a></td>
+</tr>
 </table>
-
 ---
 
 ## 🎯 Overview
