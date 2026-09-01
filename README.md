@@ -37,7 +37,7 @@ The player competes against the computer for a selected number of rounds. In eve
 <td>🛠️ <a href="#-technologies-used">Technologies Used</a></td>
 </tr>
 <tr>
-<td>▶️ <a href="#-how-to-run">How to Run</a></td>
+<td>▶️ <a href="#how-to-run">How to Run</a></td>
 <td>💻 <a href="#-example">Example</a></td>
 <td>🎓 <a href="#-learning-objectives">Learning Objectives</a></td>
 </tr>
@@ -576,6 +576,20 @@ Contains the project's MIT License.
 - Console Input/Output
 
 ---
+
+## 📅 Development Timeline
+
+
+| Milestone | Date |
+| :--- | :--- |
+| 🚀 **Started** | November 30, 2025 |
+| ✅ **Completed** | December 1, 2025 |
+| ⏱️ **Development Period** | 2 Days |
+
+> **Note:** These dates represent the actual development period of the project, not the date it was uploaded to GitHub.
+
+--- 
+
 
 ## ▶️ How to Run
 
